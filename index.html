@@ -7,14 +7,15 @@
     <meta name="format-detection" content="telephone=no" />
 
     <!-- css -->
-    <link rel="stylesheet" href="https://kiteretsu18.github.io/trial/reset.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://kiteretsu18.github.io/trial/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
 </head>
 <body>
+    <!-- ヘッダー -->
     <header class="header">
         <div class="header__top">
             <div class="header__logo"><img src="img/パス -1.png" alt="" class="header__logo--img"></div>
@@ -57,6 +58,7 @@
             </div>
         </div>
 
+        <!-- ニュース -->
         <section class="news__section">
             <div class="news__header">
                 <h2 class="news__header--ttl">NEWS</h2>
@@ -65,7 +67,10 @@
             </div>
         </section>
     </header>
+    
+        <!-- メイン -->
     <main class="main__container">
+        
         <!-- コンセプト -->
         <section class="main__concept">
             <div class="concept__header">
@@ -215,7 +220,7 @@
                             <div class="slide inactive">
                                 <img src="img/小左img.png" alt="Image 1">
                             </div>
-                            <div class="slide ">
+                            <div class="slide inactive">
                                 <img src="img/大img.png" alt="Image 2">
                             </div>
                             <div class="slide inactive">
@@ -271,6 +276,40 @@
         
     </main>
 
+    <!-- フッター -->
+    <section class="footer">
+                <div class="footer__info">
+                    <h2 class="footer__txt">
+                        お気軽にお問い合わせください！<br>
+                        サクッと概算見積書を作成します
+                    </h2>
+                    <div class="footer__contact">
+                        <div class="contact__number">
+                            <img src="img/Icon awesome-phone-alt-1.png" alt="" class="contact__number--img">
+                            <h2 class="phone number">03-1234-5678<p>平日10:00~18:00</p></h2>
+                        </div>
+                        <div class="contact__btn">
+                            お問い合わせ
+                            <img class="contact__btn--right" src="img/Icon awesome-caret-right.png" alt="">
+                        </div>
+                    </div>
+            </div>
+    
+    </section>
+    
+    <!-- フッターコンタクト -->
+    <section class="footer__cotact--img">
+                <footer class="footer__img">
+                    <div class="footer__logo">
+                        <img src="img/パス 8.png" alt="" class="footer__logo--img">
+                    </div>
+                    <p class="footer__logo--txt">〒123-456　東京都架空区架空1-1-1　KAKUビル2F</p>
+                    <p class="footer__copy">&copy;  LOGO All rights reserved</p>
+                </footer>
+        
+    </section>
+    
+
     
     <!-- その他のHTMLコンテンツ -->
 
@@ -279,36 +318,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 1; // 初期のスライドインデックス
     const slides = document.querySelectorAll('.slide'); // すべてのスライドを取得
-    const totalSlides = slides.length; // スライドの合計数
-
-
 
     function updateSlidePosition() {
-  slides.forEach((slide, index) => {
-    slide.style.transform = `translateX(-${currentIndex * 100}%)`; // すべてのスライドを移動
-    if (index !== currentIndex) {
-      slide.classList.add('inactive');
-    } else {
-      slide.classList.remove('inactive');
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+            slide.classList.add('inactive'); // すべてのスライドに非アクティブクラスを追加
+            if (index === currentIndex) {
+                slide.classList.remove('inactive'); // 現在のスライドの非アクティブクラスを削除
+            }
+        });
     }
-  });
-}
-
-
-    // // 初期スライド位置を設定
-    // updateSlidePosition();
 
     // 左矢印をクリックしたときの処理
     document.querySelector('.left__arrow').addEventListener('click', function(event) {
         event.preventDefault();
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
         updateSlidePosition();
     });
 
     // 右矢印をクリックしたときの処理
     document.querySelector('.right__arrow').addEventListener('click', function(event) {
         event.preventDefault();
-        currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
+        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
         updateSlidePosition();
     });
 });
