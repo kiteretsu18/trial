@@ -716,56 +716,64 @@ body{
   margin-top: 80px;
 }
 
-.arrow__img{
-  max-width: 168px;
-  max-height: 64px;
-  margin-left: auto;
-}
-
-/* 正しいセレクタ: 非アクティブなスライドを小さく表示 */
-/* 非アクティブなスライドのスタイル */
-
-
-
-/* 矢印ナビゲーションのスタイル設定 */
-.slider__arrow img {
-  max-width: 64px; /* 画像の幅を指定 */
-  max-height: 64px; /* 高さは自動で調整してアスペクト比を保持 */
-  cursor: pointer; /* クリック可能なカーソルに変更 */
-}
-
-/* スライダー全体のスタイル設定 */
-.slider__container {
-  position: relative;
-  max-width: 1633px; 
-  margin: auto; /* 中央寄せ */
-  overflow: visible; 
-}
-
-
-
-
-/* 個々のスライドのスタイル設定 */
 .slider {
-  display: flex; /* スライドを横並びにする */
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  margin: auto;
+  background-color: transparent; /* 背景を透明に設定 */
+}
 
+.slides {
+  margin-top: 40px;
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .slide {
-  /* ... 既存のスタイル ... */
-  transition: transform 0.5s ease; /* スムーズなトランジションを追加 */
+  flex: 0 0 auto; 
+  width: 500px; 
+  height: 334px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0.5;
+  transform: scale(0.8); 
+  background-color: transparent; /* 背景を透明に設定 */
 }
 
-.slide.inactive {
-  transform: scale(0.8); /* サイズを0.8に設定 */
-  opacity: 0.5; /* 透明度を下げる（オプショナル） */
-  transition: transform 0.5s ease, opacity 0.5s ease; /* スムーズなトランジション */
+.slide.active {
+  opacity: 1;
+  transform: scale(1); 
+  width: 618px; 
+  height: 412px; 
 }
-
 
 .slide img {
-  width: 100%; /* 画像をスライドの幅に合わせる */
-  display: block; /* ブロックレベル要素として表示 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrows {
+  position: absolute;
+  right: 10px; /* 右上に配置 */
+  top: -20px; /* 右上に配置 */
+  z-index: 10;
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow img {
+  width: 50px;
+  height: auto;
 }
 
 
