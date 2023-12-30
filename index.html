@@ -213,35 +213,22 @@
             <div class="work__header">
                 <h2 class="work__ttl">WEB集客をトータルサポート</h2>
                 <p class="work__header--txt">BtoBのコーポレートサイトを中心に様々なWEBサイトの制作実績がございます。集客に繋がるデザインで御社の売上UPに貢献する提案をします。</p>
-                
-                <div class="work__slider">
-                    <div class="slider__container">
-                        <!-- 左の矢印 -->
-                        <div class="arrow__img">
-                            <a href="#" class="slider__arrow left__arrow">
-                                <img src="https://kiteretsu18.github.io/trial/arrow1.png" alt="Previous slide">
-                            </a>
+            </div>
 
-                            <!-- 右の矢印 -->
-                            <a href="#" class="slider__arrow right__arrow">
-                                <img src="https://kiteretsu18.github.io/trial/arrow.png" alt="Next slide">
-                            </a>
-                        </div>
-                        <div class="slider">
-                            <!-- 各スライドの内容 -->
-                            <div class="slide inactive">
-                                <img src="https://kiteretsu18.github.io/trial/小左img.png" alt="Image 1">
-                            </div>
-                            <div class="slide inactive">
-                                <img src="https://kiteretsu18.github.io/trial/大img.png" alt="Image 2">
-                            </div>
-                            <div class="slide inactive">
-                                <img src="https://kiteretsu18.github.io/trial/小右img.png" alt="Image 3">
-                            </div>
-                        </div>
+                <div class="slider">
+                    <div class="slides">
+                        <!-- 画像をここに追加 -->
+                        <img src="img/小左img.png" class="slide">
+                        <img src="img/大img.png" class="slide">
+                        <img src="img/小右img.png" class="slide">
+                        <!-- 他の画像も同様に追加 -->
+                    </div>
+                    <div class="arrows">
+                        <button class="arrow prev"><img src="img/arrow1.png" alt="Previous"></button>
+                        <button class="arrow next"><img src="img/arrow.png" alt="Next"></button>
                     </div>
                 </div>
-            </div>
+
                 <div class="work__info">
                     <h2 class="work__info--ttl">下倉架空税理士事務所 様</h2>
                     <p class="work__info--txt">
@@ -328,40 +315,40 @@
         
     </section>
     
+<!-- JavaScriptのスクリプトを追加 -->
+<script>
+  let currentIndex = 1; 
+  const slides = document.querySelector('.slides');
+  const slideArray = document.querySelectorAll('.slide');
 
-    
-    <!-- その他のHTMLコンテンツ -->
+  function updateSlidePosition() {
+    const slideWidth = slideArray[currentIndex].clientWidth;
+    const offset = (slideWidth + 20) * currentIndex;
+    const centerOffset = -(offset - window.innerWidth / 2 + slideWidth / 2);
 
-    <!-- JavaScriptのスクリプトを追加 -->
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    let currentIndex = 1; // 初期のスライドインデックス
-    const slides = document.querySelectorAll('.slide'); // すべてのスライドを取得
+    slides.style.transform = `translateX(${centerOffset}px)`;
 
-    function updateSlidePosition() {
-        slides.forEach((slide, index) => {
-            slide.style.transform = `translateX(-${currentIndex * 100}%)`;
-            slide.classList.add('inactive'); // すべてのスライドに非アクティブクラスを追加
-            if (index === currentIndex) {
-                slide.classList.remove('inactive'); // 現在のスライドの非アクティブクラスを削除
-            }
-        });
-    }
-
-    // 左矢印をクリックしたときの処理
-    document.querySelector('.left__arrow').addEventListener('click', function(event) {
-        event.preventDefault();
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-        updateSlidePosition();
+    slideArray.forEach((slide, index) => {
+      slide.classList.remove('active');
+      if (index === currentIndex) {
+        slide.classList.add('active');
+      }
     });
+  }
 
-    // 右矢印をクリックしたときの処理
-    document.querySelector('.right__arrow').addEventListener('click', function(event) {
-        event.preventDefault();
-        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-        updateSlidePosition();
-    });
-});
+  document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slideArray.length - 1;
+    updateSlidePosition();
+  });
+
+  document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex < slideArray.length - 1) ? currentIndex + 1 : 0;
+    updateSlidePosition();
+  });
+
+  updateSlidePosition();
+  window.addEventListener('resize', updateSlidePosition);
+
 
 // コンセプトアニメーション
 
