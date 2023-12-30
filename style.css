@@ -12,7 +12,7 @@ body{
 .header {
   max-width: 100%;
   max-height: 100%;
-  background-image: url(https://kiteretsu18.github.io/trial/fv-img01.png);
+  background-image: url(../img/fv-img01.png);
   background-size: 100% , auto;
   background-repeat: no-repeat;
   color: #192F60;
@@ -119,7 +119,7 @@ body{
 }
 
 .contact__inquiry:hover {
-  background-color: #f1c40f; /* ホバー時の背景色変更 */
+  background-color: #f1c40f; 
 }
 
 
@@ -149,6 +149,23 @@ body{
   font-weight: bold;
   max-width: 100%;
 }
+
+/* アニメーション */
+@keyframes slideRight {
+  from {
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.header__main {
+  animation: slideRight 3s ease-out forwards;
+}
+
 
 .main__title {
   font-size: 60px; 
@@ -223,7 +240,7 @@ body{
 .contact__btn{
   display: flex;
   width: 240px;
-  max-height: 56px;
+  height: 56px;
   color: #FFFFFF;
   justify-content: center;
   align-items: center;
@@ -234,11 +251,16 @@ body{
   padding: 16px , 16px;
 }
 
+.contact__btn--link :hover{
+  background-color: #f1c40f;
+  padding: 16px , 16px;
+
+}
+
 .contact__btn--right{
   width: 5px;
   height: 10px;
   margin-left: 16px;
-  margin-top: 2px;  
 }
 
 .news__section{
@@ -303,7 +325,7 @@ body{
 
 .main__concept{
   max-width: 1138.8px;
-  background-image: url(https://kiteretsu18.github.io/trial/CONCEPT.png);
+  background-image: url(../img/CONCEPT.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
@@ -345,7 +367,24 @@ body{
   justify-content: center;
   align-items: center;
   letter-spacing: 4px;
+  padding-left: 10px;
 }
+
+/* アニメーション */
+
+.concept__ttl--txt{
+  opacity: 0;
+  transform: translateX(150px);
+  transition: opacity 3s, transform 3s;
+}
+
+.concept__ttl--txt.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* アニメーション */
+
+
 
 .concept__ttl--txt:nth-of-type(2){
   margin-top: 12px;
@@ -377,12 +416,37 @@ body{
   line-height: 32px;
 }
 
+/* アニメーション */
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(60px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.concept__txt{
+  opacity: 0;
+  transform: translateY(30px);
+}
+/* アニメーション */
+
 .info__btn{
   display: flex;
   width: 245px;
   height: 40px;
   margin: 40px auto;
   border: 1px solid #192F60 ;
+}
+
+.info__btn:hover{
+  background-color: #192F60;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .btn__txt{
@@ -404,7 +468,7 @@ body{
 
 .concept__list{
   margin-top: 80px;
-  background-image: url(https://kiteretsu18.github.io/trial/bg.png);
+  background-image: url(../img/bg.png);
   background-size: contain;
   background-repeat: no-repeat;
   max-width: 100%;
@@ -453,6 +517,20 @@ body{
   margin-left: 187px;
 }
 
+/* アニメーション */
+
+.list__item--flex{
+  opacity: 0;
+  transform: translateX(150px);
+  transition: opacity 3s, transform 3s;
+}
+
+.list__item--flex.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* アニメーション */
+
 .concept__flex .concept__list--item:nth-of-type(2) {
   margin-left: 83px;   
 }
@@ -488,7 +566,7 @@ body{
 .service{
   max-width: 1140;
   max-height: 703px;
-  background-image: url(https://kiteretsu18.github.io/trial/SERVICE.png);
+  background-image: url(../img/SERVICE.png);
   background-repeat: no-repeat;
   background-position: right;
   margin-right: 113px;
@@ -530,7 +608,7 @@ body{
 }
 
 .service__item{
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ 1.png);
+  background-image: url(../img/マスクグループ\ 1.png);
   background-repeat: no-repeat;
   background-size: 308px 205px;
   max-width: 320px;
@@ -538,14 +616,29 @@ body{
 
 .service__list .service__item:nth-of-type(2) {
   margin-left: 13px;
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -1.png);
+  background-image: url(../img/マスクグループ\ -1.png);
 }
 
 .service__list .service__item:nth-of-type(3) {
   margin-left: 13px;
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -2.png);
+  background-image: url(../img/マスクグループ\ -2.png);
 }
 
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(60px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.service__list{
+  opacity: 0;
+  transform: translateY(30px);
+}
 
 .service__item--ttl{
   background-color: #FFFFFF;
@@ -591,7 +684,7 @@ body{
 
 .work__header{
   max-width: 1140px;
-  background-image: url(https://kiteretsu18.github.io/trial/WORKS.png);
+  background-image: url(../img/WORKS.png);
   background-repeat: no-repeat;
   background-position: left top;
   margin-left: 114px;
@@ -689,39 +782,62 @@ body{
   margin-left: 365px;
 }
 
+/* アニメーション */
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(60px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.work__info--txt{
+  opacity: 0;
+  transform: translateY(30px);
+}
+/* アニメーション */
+
+
+
 .info__btn--work{
   display: flex;
-  font-size: 14px;
-  max-width: 245px;
-  max-height: 40px;
+  width: 245px;
+  height: 40px;
   margin: 40px auto;
   border: 1px solid #707070 ;
   background-color: #AEB6C7;
   color: #FFFFFF;
+}
 
+.info__link :hover{
+  background-color: #FFFFFF;
+  color: #192F60;
 }
 
 .btn__txt--work{
+  font-size: 14px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 182px;
-  height: 30px;
+  max-width: 245px;
+  max-height: 40px;
   margin-left: auto;
+  margin-top: 12px;
 }
 
 .work__btn--right{
   max-width: 5px;
-  max-height: 10px;  
-  margin-top: 10px;
-  margin-right: 19px;
-  margin-left: 16px;
-
+  max-height: 10px;
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 /* ブログ */
 .blog{
-  background-image: url(https://kiteretsu18.github.io/trial/blog_bg.png);
+  background-image: url(../img/blog_bg.png);
   max-width: 1366px;
   max-height: 515px;
   background-repeat: no-repeat;
@@ -730,7 +846,7 @@ body{
 }
 
 .blog__img{
-  background-image: url(https://kiteretsu18.github.io/trial/BLOG.png);
+  background-image: url(../img/BLOG.png);
   background-repeat: no-repeat;
   background-position: right top;
   padding-top: 80px;
@@ -746,6 +862,26 @@ body{
 .blog__info{
   display: flex;
 }
+
+/* アニメーション */
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(60px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.blog__info{
+  opacity: 0;
+  transform: translateY(30px);
+}
+/* アニメーション */
+
 
 .blog__time{
   font-size: 16px;
@@ -770,7 +906,7 @@ body{
   margin-top: 80px;
   max-width: 1366px;
   max-height: 316px;
-  background-image: url(https://kiteretsu18.github.io/trial/contact01.png);
+  background-image: url(../img/contact01.png);
   padding-top: 80px;
   text-align: center;
   padding-bottom: 80px;
@@ -829,7 +965,7 @@ body{
 .header {
   max-width: 760px;
   max-height: max-content;
-  background-image: url(https://kiteretsu18.github.io/trial/fv-img01.png);
+  background-image: url(../img/fv-img01.png);
   background-size: contain;
   background-repeat: no-repeat;
   color: #192F60;
@@ -1110,7 +1246,7 @@ display: flex;
 .main__concept{
   max-width: 569.4px;
   max-height: 338px;
-  background-image: url(https://kiteretsu18.github.io/trial/CONCEPT.png);
+  background-image: url(../img/CONCEPT.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
@@ -1200,11 +1336,12 @@ display: flex;
   margin-top: 6.5px;
 }
 
+
 /* コンセプトテキスト */
 
 .concept__list{
   margin-top: 40px;
-  background-image: url(https://kiteretsu18.github.io/trial/bg.png);
+  background-image: url(../img/bg.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -1293,7 +1430,7 @@ display: flex;
 .service{
   max-width: 570;
   max-height: 351.5px;
-  background-image: url(https://kiteretsu18.github.io/trial/SERVICE.png);
+  background-image: url(../img/SERVICE.png);
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
@@ -1336,7 +1473,7 @@ display: flex;
 }
 
 .service__item{
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ 1.png);
+  background-image: url(../img/マスクグループ\ 1.png);
   background-repeat: no-repeat;
   background-size: 154px 102.5px;
   max-width: 160px;
@@ -1344,12 +1481,12 @@ display: flex;
 
 .service__list .service__item:nth-of-type(2) {
   margin-left: 6.5px;
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -1.png);
+  background-image: url(../img/マスクグループ\ -1.png);
 }
 
 .service__list .service__item:nth-of-type(3) {
   margin-left: 6.5px;
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -2.png);
+  background-image: url(../img/マスクグループ\ -2.png);
 }
 
 
@@ -1397,7 +1534,7 @@ display: flex;
 
 .work__header{
   max-width: 570px;
-  background-image: url(https://kiteretsu18.github.io/trial/WORKS.png);
+  background-image: url(../img/WORKS.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: 57px;
@@ -1527,7 +1664,7 @@ display: flex;
 
 /* ブログ */
 .blog{
-  background-image: url(https://kiteretsu18.github.io/trial/blog_bg.png);
+  background-image: url(../img/blog_bg.png);
   max-width: 760px;
   max-height: 257.5px;
   background-repeat: no-repeat;
@@ -1538,7 +1675,7 @@ display: flex;
 }
 
 .blog__img{
-  background-image: url(https://kiteretsu18.github.io/trial/BLOG.png);
+  background-image: url(../img/BLOG.png);
   background-repeat: no-repeat;
   background-position: right top;
   background-size: contain;
@@ -1579,7 +1716,7 @@ display: flex;
   margin-top: 40px;
   max-width: 760px;
   max-height: 158px;
-  background-image: url(https://kiteretsu18.github.io/trial/contact01.png);
+  background-image: url(../img/contact01.png);
   padding-top: 40px;
   text-align: center;
 }
