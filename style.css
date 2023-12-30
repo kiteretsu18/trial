@@ -1,39 +1,42 @@
 @charset "UTF-8";
 
 body{
-    width: 1366px;
-    margin: 0 auto;
-    font-family: 'Hiragino Kaku Gothic Std', 'ヒラギノ角ゴ Std', sans-serif;
-    color: #192F60;
+  width: 1366px;
+  margin: 0 auto;
+  max-width: 100%;
+  font-family: 'Hiragino Kaku Gothic Std', 'ヒラギノ角ゴ Std', sans-serif;
+  color: #192F60;
 }
 
 /* ベースとなるスタイル */
 .header {
-  width: 1366px;
-  height: 755px;
-  background-image: url(https://kiteretsu18.github.io/trial/fv-img01.png);
+  max-width: 100%;
+  max-height: 100%;
+  background-image: url(../img/fv-img01.png);
+  background-size: 100% , auto;
+  background-repeat: no-repeat;
   color: #192F60;
   font-family: 'Neue Haas Grotesk Text Pro', Arial, sans-serif;
 }
 
 /* ヘッダートップのスタイル */
 .header__top {
+  display: flex;
   background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    height: 80px;
+  max-height: 80px;
+  max-width: 1366px;
+  align-items: center;
 }
 
 /* ロゴのスタイル */
 .header__logo {
-    width: 124px;
-    height: 48px;
-    margin-left: 53px;
-    margin-top: 16px;
+    max-width: 124px;
+    max-height: 48px;
+    margin-left: 16px;
 }
 
 .header__logo--img{
-    margin: 0 auto;
+    margin-top: 12px;
 }
 
 
@@ -45,12 +48,12 @@ body{
 
 .nav__list {
     display: flex;
-
 }
 
 .nav__item {
     text-align: center;
     margin-right: 30px;
+    max-width: 25%;
 }
 
 .nav__link {
@@ -76,6 +79,8 @@ body{
 .header__contact {
     display: flex;
     align-items: center;
+    margin-right: 40px;
+    margin-left: auto;
     letter-spacing: 4px;
 }
 
@@ -87,8 +92,8 @@ body{
 
 .phone__icon{
     margin-top: 6px;
-    width: 16px;
-    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
     object-fit: contain;
 }
 
@@ -106,9 +111,11 @@ body{
 
 .contact__inquiry {
     background-color: #707070;
-    width: 128px;
+    max-width: 128px;
     height: 80px;
     margin-left: auto;
+    padding: 0 16px;
+
 }
 
 .contact__inquiry:hover {
@@ -116,11 +123,18 @@ body{
 }
 
 
+.contact__inquiry--btn{
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+}
+
 .contact__inquiry--img{
-    width: 30px;
-    height: 24px;
+    max-width: 30px;
+    max-height: 24px;
     object-fit: contain;
-    margin: 13px 49px 14px 49px ;
 }
 
 .contact__inquiry p{
@@ -130,11 +144,10 @@ body{
     font-weight: bold;
 }
 
-/* メインコンテンツのスタイル */
+
 .header__main {
   font-weight: bold;
-
-
+  max-width: 100%;
 }
 
 .main__title {
@@ -142,8 +155,8 @@ body{
   font-weight: bold;
   letter-spacing: 13px;
   background-color: #FFFFFF;
-  width: 913px;
-  height: 86px;
+  max-width: max-content;
+  max-height: max-content;
   margin-top: 193px;
   margin-left: 129px;
   padding: 13px 16px;
@@ -153,21 +166,23 @@ body{
   font-weight: bold;
   letter-spacing: 2px;
   background-color: #FFFFFF;
-  width: 913px;
-  height: 86px;
+  max-width: max-content;
+  max-height: max-content;
   margin-top: 8px;
   margin-left: 129px;
   padding: 13px 16px;
 }
 
 .main__subtitle{
+  display: flex;
   background-color: #FFFFFF;
-  width: 347px;
-  height: 44px;
+  max-width: max-content;
+  max-height: 44px;
   font-size: 18px;
   font-weight: bold;
-  text-align: center;
-  padding-top: 13px;
+  justify-content: center;
+  align-items: center;
+  padding: 13px;
   margin-top: 24px;
   margin-left: 129px;
 }
@@ -182,20 +197,22 @@ body{
 .contact__number{
   display: flex;
   width: 240px;
-  height: 56px;
+  max-height: 56px;
   background-color: #192F60;
   color: #FFFFFF;
   font-family: 'Neue Haas Grotesk Text Pro', Arial, sans-serif;
   font-size: 24px;
   justify-content: center;
+  align-items: center;
+  padding: 16px;
   letter-spacing: 2px;
 }
 
 .contact__number--img{
-  width: 16px;  
-  height: 16px;
-  margin-top: 5px;
+  max-width: 16px;  
+  max-height: 16px;
   margin-right: 8px;
+  margin-bottom: 24px;
 }
 
 .contact__number p{
@@ -206,7 +223,7 @@ body{
 .contact__btn{
   display: flex;
   width: 240px;
-  height: 56px;
+  max-height: 56px;
   color: #FFFFFF;
   justify-content: center;
   align-items: center;
@@ -214,6 +231,7 @@ body{
   margin-left: 80px;
   font-size: 20px;
   font-weight: bold;
+  padding: 16px , 16px;
 }
 
 .contact__btn--right{
@@ -224,8 +242,8 @@ body{
 }
 
 .news__section{
-  width: 1253px;
-  height: 80px;
+  max-width: 1253px;
+  max-height: max-content;
   margin-top: 70px;
   background-color: rgba(255, 255, 255, 0.9);
   margin-left: 113px;
@@ -233,6 +251,8 @@ body{
 
 .news__header{
   display: flex;
+  max-width: 100%;
+  height: max-content;
 }
 
 .news__header--ttl{
@@ -273,42 +293,49 @@ body{
   color: #2D2D2D;
 }
 
-/* コンセプトのスタイル */
+/* メインコンテンツのスタイル */
 
 .main__container{
-  width: 1366px;
-  margin-top: 93px;
+  margin-top: 40px;
 }
 
+/* コンセプト */
+
 .main__concept{
-  width: 1138.8px;
-  height: 676px;
-  background-image: url(https://kiteretsu18.github.io/trial/CONCEPT.png);
+  max-width: 1138.8px;
+  background-image: url(../img/CONCEPT.png);
   background-repeat: no-repeat;
+  background-size: contain;
   margin: 0 auto;
+}
+
+.concept__header{
+  max-width: 1138.8px;
+
 }
 
 .concept__kv{
   display: flex;
+  width: 100%;
 }
 
 .concept__kv--img{
-  width: 475px;
-  height: 315px;
+  max-width: 475px;
+  max-height: 315px;
   margin-top: 120px;
   margin-left: 160px;
 }
 
 .concept__ttl{
-  width: 460px;
-  height: 120px;
+  max-width: 460px;
+  max-height: 120px;
   margin-left: 15px;
   margin-top: 203px;
 }
 
 .concept__ttl--txt{
   display: flex;
-  width: 460px;
+  max-width: 100%;
   height: 54px;
   font-size: 28px;
   font-weight: bold;
@@ -324,10 +351,11 @@ body{
   margin-top: 12px;
   width: 306px;
   margin-left: auto;
+  max-width: 100%;
 }
 
 .concept__ttl p{
-  width: 432px;
+  max-width: 432px;
   height: 80px;
   margin-top: 32px;
   margin-left: auto;
@@ -341,7 +369,7 @@ body{
 }
 
 .concept__txt{
-  width: 950px;
+  max-width: 950px;
   font-size: 14px;
   margin-top: 40px;
   margin-left: auto;
@@ -365,8 +393,8 @@ body{
 }
 
 .info__btn--right{
-  width: 5px;
-  height: 10px;  
+  max-width: 5px;
+  max-height: 10px;  
   margin-left: 15px;
   margin-right: 75px;
   margin-top: 13px;
@@ -376,17 +404,18 @@ body{
 
 .concept__list{
   margin-top: 80px;
-  background-image: url(https://kiteretsu18.github.io/trial/bg.png);
-  background-size: cover;
-  width: 100%;
+  background-image: url(../img/bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 100%;
   height: 522px;
   display: flex;
 
 }
 
 .concept__header--ttl{
-  width: 240px;
-  height: 20px;
+  max-width: 240px;
+  max-height: 20px;
   font-size: 20px;
   font-weight: bold;
   margin-top: 80px;
@@ -395,8 +424,8 @@ body{
 
 .concept__lsit--header{
   display: flex;
-  width: 296px;
-  height: 54px;
+  max-width: 296px;
+  max-height: 54px;
   background-color: #192F60;
   color: #FFFFFF;
   font-size: 28px;
@@ -410,8 +439,8 @@ body{
 
 .concept__list--txt{
   font-size: 14px;
-  width: 372px;
-  height: 40px;
+  max-width: 372px;
+  max-height: 40px;
   margin-top: 40px;
   margin-left: 113px;
 }
@@ -457,9 +486,9 @@ body{
 
 /* サービス */
 .service{
-  width: 1140;
-  height: 703px;
-  background-image: url(https://kiteretsu18.github.io/trial/SERVICE.png);
+  max-width: 1140;
+  max-height: 703px;
+  background-image: url(../img/SERVICE.png);
   background-repeat: no-repeat;
   background-position: right;
   margin-right: 113px;
@@ -472,8 +501,8 @@ body{
 }
 
 .service__ttl{
-  width: 443px;
-  height: 54px;
+  max-width: 443px;
+  max-height: 54px;
   font-size: 28px;
   font-weight: bold;
   color: #FFFFFF;
@@ -486,42 +515,42 @@ body{
 
 .service__txt{
   font-size: 14px;
-  width: 950px;
-  height: 40px;
+  max-width: 950px;
+  max-height: 40px;
   margin-top: 40px;
   line-height: 30px;
 }
 
 .service__list{
   margin-top: 40px;
-  width: 936px;
-  height: 449px;
+  max-width: 936px;
+  max-height: 449px;
   display: flex;
   margin-left: 95px;
 }
 
 .service__item{
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ 1.png);
+  background-image: url(../img/マスクグループ\ 1.png);
   background-repeat: no-repeat;
   background-size: 308px 205px;
-  width: 320px;
+  max-width: 320px;
 }
 
 .service__list .service__item:nth-of-type(2) {
   margin-left: 13px;
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -1.png);
+  background-image: url(../img/マスクグループ\ -1.png);
 }
 
 .service__list .service__item:nth-of-type(3) {
   margin-left: 13px;
-  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -2.png);
+  background-image: url(../img/マスクグループ\ -2.png);
 }
 
 
 .service__item--ttl{
   background-color: #FFFFFF;
-  width: 250px;
-  height: 40px;
+  max-width: 250px;
+  max-height: 40px;
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -533,11 +562,11 @@ body{
 }
 
 .service__list .service__item:nth-of-type(2) .service__item--ttl {
-  width: 166px;
+  max-width: 166px;
 }
 
 .service__list .service__item:nth-of-type(3) .service__item--ttl {
-  width: 171px;
+  max-width: 171px;
 }
 
 
@@ -548,8 +577,8 @@ body{
 
 .service__img--txt{
   font-size: 14px;
-  width: 276px;
-  height: 92px;
+  max-width: 276px;
+  max-height: 92px;
   margin-top: 25px;
   line-height: 25px;
 }
@@ -561,17 +590,16 @@ body{
 }
 
 .work__header{
-  width: 1140px;
-  height: 525px;
-  background-image: url(https://kiteretsu18.github.io/trial/WORKS.png);
+  max-width: 1140px;
+  background-image: url(../img/WORKS.png);
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: left top;
   margin-left: 114px;
 }
 
 .work__ttl{
-  width: 443px;
-  height: 54px;
+  max-width: 443px;
+  max-height: 54px;
   background-color: #192F60;
   color: #FFFFFF;
   font-size: 28px;
@@ -585,7 +613,7 @@ body{
 }
 
 .work__header--txt{
-  width: 950px;
+  max-width: 950px;
   font-size: 14px;
   margin-top: 40px;
   margin-left: auto;
@@ -596,8 +624,8 @@ body{
 }
 
 .arrow__img{
-  width: 168px;
-  height: 64px;
+  max-width: 168px;
+  max-height: 64px;
   margin-left: auto;
 }
 
@@ -608,16 +636,15 @@ body{
 
 /* 矢印ナビゲーションのスタイル設定 */
 .slider__arrow img {
-  width: 64px; /* 画像の幅を指定 */
-  height: 64px; /* 高さは自動で調整してアスペクト比を保持 */
+  max-width: 64px; /* 画像の幅を指定 */
+  max-height: 64px; /* 高さは自動で調整してアスペクト比を保持 */
   cursor: pointer; /* クリック可能なカーソルに変更 */
 }
 
 /* スライダー全体のスタイル設定 */
 .slider__container {
   position: relative;
-  width: 1633px; 
-  max-width: 1133px; /* 最大幅を設定してください */
+  max-width: 1633px; 
   margin: auto; /* 中央寄せ */
   overflow: visible; 
 }
@@ -643,7 +670,6 @@ body{
 }
 
 
-
 .slide img {
   width: 100%; /* 画像をスライドの幅に合わせる */
   display: block; /* ブロックレベル要素として表示 */
@@ -666,8 +692,8 @@ body{
 .info__btn--work{
   display: flex;
   font-size: 14px;
-  width: 245px;
-  height: 40px;
+  max-width: 245px;
+  max-height: 40px;
   margin: 40px auto;
   border: 1px solid #707070 ;
   background-color: #AEB6C7;
@@ -679,37 +705,40 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 182px;
-  margin: 0 auto;
+  max-width: 182px;
+  height: 30px;
+  margin-left: auto;
 }
 
 .work__btn--right{
-  width: 5px;
-  height: 10px;  
-  margin-top: 11px;
+  max-width: 5px;
+  max-height: 10px;  
+  margin-top: 10px;
   margin-right: 19px;
+  margin-left: 16px;
 
 }
 
 /* ブログ */
 .blog{
-  background-image: url(https://kiteretsu18.github.io/trial/blog_bg.png);
-  width: 1366px;
-  height: 595px;
+  background-image: url(../img/blog_bg.png);
+  max-width: 1366px;
+  max-height: 515px;
   background-repeat: no-repeat;
-  /* background-position: none, right top; */
+  margin-top: 80px;
 
 }
 
 .blog__img{
-  background-image: url(https://kiteretsu18.github.io/trial/BLOG.png);
+  background-image: url(../img/BLOG.png);
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right top;
+  padding-top: 80px;
 }
 
 .blog__bg{
-  width: 950px;
-  height: 408px;
+  max-width: 950px;
+  max-height: 408px;
   background-color: #FFFFFF;
   margin-left: 204px;
 }
@@ -739,36 +768,39 @@ body{
 
 .footer{
   margin-top: 80px;
-  width: 1366px;
-  height: 316px;
-  background-image: url(https://kiteretsu18.github.io/trial/contact01.png);
+  max-width: 1366px;
+  max-height: 316px;
+  background-image: url(../img/contact01.png);
   padding-top: 80px;
+  text-align: center;
+  padding-bottom: 80px;
 }
 
 
 .footer__txt{
   color: #FFFFFF;
-  width: 394px;
-  height: 60px;
+  max-width: 1366px;
+  max-height: 60px;
   font-size: 24px;
   line-height: 2.5rem;
-  margin-left: 480px;
   font-weight: bold;
 }
 
 .footer__contact{
+  max-width: 1366px;
   display: flex;
-  margin-left: 403px;
-  margin-top: 45px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .footer__cotact--img{
-  width: 1366px;
-  height: 221px;
+  max-width: 1366px;
+  max-height: 221px;
   background-color: #192F60;
   color: #FFFFFF;
   padding-top: 40px;
   text-align: center;
+  padding-bottom: 40px;
 }
 
 .footer__logo{
@@ -776,8 +808,8 @@ body{
 }
 
 .footer__logo img{
-  width: 124px;
-  height: 29px;
+  max-width: 124px;
+  max-height: 29px;
 }
 
 .footer__logo--txt{
@@ -790,12 +822,13 @@ body{
   font-size: 11px;
 }
 
+
 /* レスポンシブ */
 @media (max-width: 760px) {
   /* ベースとなるスタイル */
 .header {
-  width: 760px;
-  height: max-content;
+  max-width: 760px;
+  max-height: max-content;
   background-image: url(../img/fv-img01.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -813,15 +846,15 @@ body{
 
 /* ロゴのスタイル */
 .header__logo {
-    width: 68px;
-    height: 26px;
+    max-width: 68px;
+    max-height: 26px;
     margin-right: 20px;
     margin-left: 10px;
     margin-bottom: 10px;
 }
 
 .header__logo--img{
-  width: 55px;
+  max-width: 55px;
 }
 
 
@@ -871,8 +904,8 @@ body{
 }
 
 .phone__icon{
-    width: 12px;
-    height: 12px;
+    max-width: 12px;
+    max-height: 12px;
     object-fit: contain;
 }
 
@@ -890,27 +923,38 @@ body{
 }
 
 .contact__inquiry {
-  width: 128px;
-  text-align: center;
+  background-color: #707070;
+  max-width: 64px;
+  height: 40px;
+  margin-left: auto;
+  padding: 0 8px;
+
 }
 
 .contact__inquiry:hover {
-  background-color: #f1c40f; 
+background-color: #f1c40f; /* ホバー時の背景色変更 */
 }
 
 
+.contact__inquiry--btn{
+height: 30px;
+justify-content: center;
+align-items: center;
+display: flex;
+
+}
+
 .contact__inquiry--img{
-  width: 50px;
-  margin: 0;
-  margin-top: 25px;
+  max-width: 15px;
+  max-height: 12px;
+  object-fit: contain;
 }
 
 .contact__inquiry p{
-    margin-top: 8px;
-    font-size: 7px;
-    text-align: center;
-    color: #FFFFFF;
-    font-weight: bold;
+  font-size: 7px;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: bold;
 }
 
 
@@ -923,8 +967,8 @@ body{
   font-weight: bold;
   letter-spacing: 0;
   background-color: #FFFFFF;
-  width: 450px;
-  height: 43px;
+  max-width: 450px;
+  max-height: 43px;
   margin-top: 100px;
   margin-left: 53px;
   padding: 6px 8px;
@@ -934,8 +978,8 @@ body{
   font-weight: bold;
   letter-spacing: 0;
   background-color: #FFFFFF;
-  width: 450px;
-  height: 43px;
+  max-width: 450px;
+  max-height: 43px;
   margin-top: 8px;
   margin-left: 53px;
   padding: 6px 8px;
@@ -943,8 +987,8 @@ body{
 
 .main__subtitle{
   background-color: #FFFFFF;
-  width: 160px;
-  height: 22px;
+  max-width: 160px;
+  max-height: 22px;
   font-size: 10px;
   font-weight: bold;
   text-align: center;
@@ -962,8 +1006,8 @@ body{
 
 .contact__number{
   display: flex;
-  width: 120px;
-  height: 28px;
+  max-width: 120px;
+  max-height: 28px;
   background-color: #192F60;
   color: #FFFFFF;
   font-family: 'Neue Haas Grotesk Text Pro', Arial, sans-serif;
@@ -973,8 +1017,8 @@ body{
 }
 
 .contact__number--img{
-  width: 8px;  
-  height: 8px;
+  max-width: 8px;  
+  max-height: 8px;
   margin-top: 2px;
   margin-right: 4px;
 }
@@ -986,8 +1030,8 @@ body{
 
 .contact__btn{
   display: flex;
-  width: 120px;
-  height: 23px;
+  max-width: 120px;
+  max-height: 23px;
   color: #FFFFFF;
   justify-content: center;
   align-items: center;
@@ -998,15 +1042,15 @@ body{
 }
 
 .contact__btn--right{
-  width: 2.5px;
-  height: 5px;
+  max-width: 2.5px;
+  max-height: 5px;
   margin-left: 8px;
   margin-top: 1px;  
 }
 
 .news__section{
-  width: 626.5px;
-  height: 40px;
+  max-width: 626.5px;
+  max-height: 40px;
   margin-top: 35px;
   background-color: rgba(255, 255, 255, 0.9);
   margin-left: 56.5px;
@@ -1057,15 +1101,15 @@ body{
 /* メインコンテンツのスタイル */
 
 .main__container{
-  width: 760px;
+  max-width: 760px;
   margin-top: 46.5px;
 }
 
 /* コンセプト */
 
 .main__concept{
-  width: 569.4px;
-  height: 338px;
+  max-width: 569.4px;
+  max-height: 338px;
   background-image: url(../img/CONCEPT.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -1077,23 +1121,23 @@ body{
 }
 
 .concept__kv--img{
-  width: 287.5px;
-  height: 157.5px;
+  max-width: 287.5px;
+  max-height: 157.5px;
   margin-top: 60px;
   margin-left: 80px;
 }
 
 .concept__ttl{
-  width: 230px;
-  height: 60px;
+  max-width: 230px;
+  max-height: 60px;
   margin-left: 7.5px;
   margin-top: 101.5px;
 }
 
 .concept__ttl--txt{
   display: flex;
-  width: 230px;
-  height: 27px;
+  max-width: 230px;
+  max-height: 27px;
   font-size: 14px;
   font-weight: bold;
   background-color: #192F60;
@@ -1106,13 +1150,13 @@ body{
 
 .concept__ttl--txt:nth-of-type(2){
   margin-top: 6px;
-  width: 153px;
+  max-width: 153px;
   margin-left: auto;
 }
 
 .concept__ttl p{
-  width: 268px;
-  height: 40px;
+  max-width: 268px;
+  max-height: 40px;
   margin-top: 16px;
   margin-left: auto;
   font-size: 10px;
@@ -1125,7 +1169,7 @@ body{
 }
 
 .concept__txt{
-  width: 475px;
+  max-width: 475px;
   font-size: 7px;
   margin-top: 20px;
   margin-left: auto;
@@ -1135,8 +1179,8 @@ body{
 
 .info__btn{
   display: flex;
-  width: 122.5px;
-  height: 20px;
+  max-width: 122.5px;
+  max-height: 20px;
   margin: 20px auto;
   border: 1px solid #192F60 ;
 }
@@ -1149,8 +1193,8 @@ body{
 }
 
 .info__btn--right{
-  width: 2.5px;
-  height: 5px;  
+  max-width: 2.5px;
+  max-height: 5px;  
   margin-left: 7.5px;
   margin-right: 37.5px;
   margin-top: 6.5px;
@@ -1164,8 +1208,8 @@ body{
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
-  width: 100%;
-  height: 211px;
+  max-width: 100%;
+  max-height: 211px;
   display: flex;
 
 }
@@ -1175,8 +1219,8 @@ body{
 }
 
 .concept__header--ttl{
-  width: 120x;
-  height: 10px;
+  max-width: 120x;
+  max-height: 10px;
   font-size: 10px;
   font-weight: bold;
   margin-top: 40px;
@@ -1185,8 +1229,8 @@ body{
 
 .concept__lsit--header{
   display: flex;
-  width: 132px;
-  height: 27px;
+  max-width: 132px;
+  max-height: 27px;
   background-color: #192F60;
   color: #FFFFFF;
   font-size: 14px;
@@ -1200,15 +1244,15 @@ body{
 
 .concept__list--txt{
   font-size: 7px;
-  width: 186px;
-  height: 20px;
+  max-width: 186px;
+  max-height: 20px;
   margin-top: 20px;
   margin-left: 56.5px;
 }
 
 .concept__list--item{
-  width: 325px;
-  height: 63px;
+  max-width: 325px;
+  max-height: 63px;
   display: flex;
   margin-top: 10px;
   margin-left: 93.5px;
@@ -1247,8 +1291,8 @@ body{
 
 /* サービス */
 .service{
-  width: 570;
-  height: 351.5px;
+  max-width: 570;
+  max-height: 351.5px;
   background-image: url(../img/SERVICE.png);
   background-repeat: no-repeat;
   background-position: right;
@@ -1263,8 +1307,8 @@ body{
 }
 
 .service__ttl{
-  width: 221.5px;
-  height: 27px;
+  max-width: 221.5px;
+  max-height: 27px;
   font-size: 14px;
   font-weight: bold;
   color: #FFFFFF;
@@ -1277,16 +1321,16 @@ body{
 
 .service__txt{
   font-size: 7px;
-  width: 475px;
-  height: 20px;
+  max-width: 475px;
+  max-height: 20px;
   margin-top: 20px;
   line-height: 15px;
 }
 
 .service__list{
   margin-top: 20px;
-  width: 468px;
-  height: 224.5px;
+  max-width: 468px;
+  max-height: 224.5px;
   display: flex;
   margin-left: 47.5px;
 }
@@ -1295,7 +1339,7 @@ body{
   background-image: url(../img/マスクグループ\ 1.png);
   background-repeat: no-repeat;
   background-size: 154px 102.5px;
-  width: 160px;
+  max-width: 160px;
 }
 
 .service__list .service__item:nth-of-type(2) {
@@ -1311,8 +1355,8 @@ body{
 
 .service__item--ttl{
   background-color: #FFFFFF;
-  width: 125px;
-  height: 20px;
+  max-width: 125px;
+  max-height: 20px;
   font-size: 10px;
   display: flex;
   justify-content: center;
@@ -1324,11 +1368,11 @@ body{
 }
 
 .service__list .service__item:nth-of-type(2) .service__item--ttl {
-  width: 83px;
+  max-width: 83px;
 }
 
 .service__list .service__item:nth-of-type(3) .service__item--ttl {
-  width: 85.5px;
+  max-height: 85.5px;
 }
 
 
@@ -1339,20 +1383,20 @@ body{
 
 .service__img--txt{
   font-size: 7px;
-  width: 138px;
-  height: 46px;
+  max-width: 138px;
+  max-height: 46px;
   margin-top: 12.5px;
   line-height: 12.5px;
 }
 
 /* ワーク */
 .work{
-  width: 760px;
+  max-width: 760px;
   margin-top: 40px;
 }
 
 .work__header{
-  width: 570px;
+  max-width: 570px;
   background-image: url(../img/WORKS.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -1375,7 +1419,7 @@ body{
 }
 
 .work__header--txt{
-  width: 475px;
+  max-width: 475px;
   font-size: 7px;
   margin-top: 20px;
   margin-left: auto;
@@ -1386,8 +1430,8 @@ body{
 }
 
 .arrow__img{
-  width: 84px;
-  height: 32px;
+  max-width: 84px;
+  max-height: 32px;
   margin-left: 0;
   margin-left: 510px;
 }
@@ -1399,16 +1443,15 @@ body{
 
 /* 矢印ナビゲーションのスタイル設定 */
 .slider__arrow img {
-  width: 32px; /* 画像の幅を指定 */
-  height: 32px; /* 高さは自動で調整してアスペクト比を保持 */
+  max-width: 32px; /* 画像の幅を指定 */
+  max-height: 32px; /* 高さは自動で調整してアスペクト比を保持 */
   cursor: pointer; /* クリック可能なカーソルに変更 */
 }
 
 /* スライダー全体のスタイル設定 */
 .slider__container {
   position: relative;
-  width: 816.5px; 
-  max-width: 816.5px; /* 最大幅を設定してください */
+  max-width: 816.5px; 
   margin: auto; /* 中央寄せ */
   overflow: visible; 
 }
@@ -1435,7 +1478,7 @@ body{
 
 
 .slide img {
-  width: 100%; /* 画像をスライドの幅に合わせる */
+  max-width: 100%; /* 画像をスライドの幅に合わせる */
   display: block; /* ブロックレベル要素として表示 */
 }
 
@@ -1457,8 +1500,8 @@ body{
 .info__btn--work{
   display: flex;
   font-size: 7px;
-  width: 122.5px;
-  height: 20px;
+  max-width: 122.5px;
+  max-height: 20px;
   margin: 20px auto;
   border: 1px solid #707070 ;
   background-color: #AEB6C7;
@@ -1470,13 +1513,13 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 91px;
+  max-width: 91px;
   margin: 0 auto;
 }
 
 .work__btn--right{
-  width: 2.5px;
-  height: 5px;  
+  max-width: 2.5px;
+  max-height: 5px;  
   margin-top: 5.5px;
   margin-right: 9.5px;
 
@@ -1485,8 +1528,8 @@ body{
 /* ブログ */
 .blog{
   background-image: url(../img/blog_bg.png);
-  width: 760px;
-  height: 257.5px;
+  max-width: 760px;
+  max-height: 257.5px;
   background-repeat: no-repeat;
   margin-top: 40px;
   background-size: contain;
@@ -1503,8 +1546,8 @@ body{
 }
 
 .blog__bg{
-  width: 475px;
-  height: 204px;
+  max-width: 475px;
+  max-height: 204px;
   background-color: #FFFFFF;
   margin-left: 102px;
 }
@@ -1534,21 +1577,21 @@ body{
 
 .footer{
   margin-top: 40px;
-  width: 760px;
-  height: 158px;
+  max-width: 760px;
+  max-height: 158px;
   background-image: url(../img/contact01.png);
   padding-top: 40px;
   text-align: center;
 }
 
 .footer__txt{
+  text-align: center;
   color: #FFFFFF;
-  width: 197px;
-  height: 30px;
+  max-width: 760px;
+  max-height: max-content;
   font-size: 12px;
   line-height: 1.5rem;
   font-weight: bold;
-  margin-left: 290px;
 }
 
 .footer__contact{
@@ -1559,8 +1602,8 @@ body{
 }
 
 .footer__cotact--img{
-  width: 760px;
-  height: 110.5px;
+  max-width: 760px;
+  max-height: 110.5px;
   background-color: #192F60;
   color: #FFFFFF;
   padding-top: 20px;
@@ -1568,12 +1611,12 @@ body{
 }
 
 .footer__logo{
-  height: 24px;
+  max-height: 24px;
 }
 
 .footer__logo img{
-  width: 62px;
-  height: 14.5px;
+  max-width: 62px;
+  max-height: 14.5px;
 }
 
 .footer__logo--txt{
