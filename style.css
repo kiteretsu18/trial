@@ -1,0 +1,740 @@
+@charset "UTF-8";
+
+body{
+    width: 1366px;
+    margin: 0 auto;
+    font-family: 'Hiragino Kaku Gothic Std', 'ヒラギノ角ゴ Std', sans-serif;
+    color: #192F60;
+}
+
+/* ベースとなるスタイル */
+.header {
+  width: 1366px;
+  height: 755px;
+  background-image: url(../img/fv-img01.png);
+  color: #192F60;
+  font-family: 'Neue Haas Grotesk Text Pro', Arial, sans-serif;
+}
+
+/* ヘッダートップのスタイル */
+.header__top {
+  background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+/* ロゴのスタイル */
+.header__logo {
+    width: 124px;
+    height: 48px;
+    margin-left: 53px;
+    margin-top: 16px;
+}
+
+.header__logo--img{
+    margin: 0 auto;
+}
+
+
+/* ナビゲーションのスタイル */
+.header__nav {
+    margin-left: 229px;
+    
+}
+
+.nav__list {
+    display: flex;
+
+}
+
+.nav__item {
+    text-align: center;
+    margin-right: 30px;
+}
+
+.nav__link {
+    color: #0C162C;
+    font-size: 13px; 
+    transition: color 0.3s;
+
+}
+
+.nav__list p{
+    color: #192F60;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 6px;
+    letter-spacing: 2px;
+}
+
+.nav__link:hover {
+    color: #ffcc00; /* ホバー時の色変更 */
+}
+
+/* 連絡先情報のスタイル */
+.header__contact {
+    display: flex;
+    align-items: center;
+    letter-spacing: 4px;
+}
+
+.contact__phone {
+    display: flex;
+    margin-right: 15px; /* 電話番号と問い合わせボタンの間隔 */
+    font-size: 16px;
+}
+
+.phone__icon{
+    margin-top: 6px;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.phone__icon--txt{
+    padding-left: 8px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.phone__icon--txt p{
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.contact__inquiry {
+    background-color: #707070;
+    width: 128px;
+    height: 80px;
+    margin-left: auto;
+}
+
+.contact__inquiry:hover {
+  background-color: #f1c40f; /* ホバー時の背景色変更 */
+}
+
+
+.contact__inquiry--img{
+    width: 30px;
+    height: 24px;
+    object-fit: contain;
+    margin: 13px 49px 14px 49px ;
+}
+
+.contact__inquiry p{
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* メインコンテンツのスタイル */
+.header__main {
+  font-weight: bold;
+
+
+}
+
+.main__title {
+  font-size: 60px; 
+  font-weight: bold;
+  letter-spacing: 13px;
+  background-color: #FFFFFF;
+  width: 913px;
+  height: 86px;
+  margin-top: 193px;
+  margin-left: 129px;
+  padding: 13px 16px;
+}
+.main__title2 {
+  font-size: 60px; 
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: #FFFFFF;
+  width: 913px;
+  height: 86px;
+  margin-top: 8px;
+  margin-left: 129px;
+  padding: 13px 16px;
+}
+
+.main__subtitle{
+  background-color: #FFFFFF;
+  width: 347px;
+  height: 44px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 13px;
+  margin-top: 24px;
+  margin-left: 129px;
+}
+
+.header__info{
+  display: flex;
+  margin-top: 84px;
+  margin-left: 113px;
+
+}
+
+.contact__number{
+  display: flex;
+  width: 240px;
+  height: 56px;
+  background-color: #192F60;
+  color: #FFFFFF;
+  font-family: 'Neue Haas Grotesk Text Pro', Arial, sans-serif;
+  font-size: 24px;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
+.contact__number--img{
+  width: 16px;  
+  height: 16px;
+  margin-top: 5px;
+  margin-right: 8px;
+}
+
+.contact__number p{
+  font-size: 16px;
+  padding-top: 4px;
+}
+
+.contact__btn{
+  display: flex;
+  width: 240px;
+  height: 56px;
+  color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  background-color: #20868A;
+  margin-left: 80px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.contact__btn--right{
+  width: 5px;
+  height: 10px;
+  margin-left: 16px;
+  margin-top: 2px;  
+}
+
+.news__section{
+  width: 1253px;
+  height: 80px;
+  margin-top: 70px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-left: 113px;
+}
+
+.news__header{
+  display: flex;
+}
+
+.news__header--ttl{
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 40px;
+  padding-top: 26px;
+  position: relative; 
+  padding-right: 20px; 
+
+}
+
+.news__header--ttl::after {
+  content: ''; /* 疑似要素の内容は空 */
+  display: block; /* 疑似要素をブロックレベル要素として表示 */
+  position: absolute; /* 親要素に対して絶対位置指定 */
+  right: 0; /* 要素の右端に配置 */
+  top: 70%; /* 上端から50%の位置に配置 */
+  transform: translateY(-50%); /* 縦線の高さの半分を上に移動して中央に配置 */
+  height: 1em; /* 縦線の高さをテキストのフォントサイズに合わせる */
+  width: 2px; /* 縦線の幅 */
+  background-color: #192F60; /* 縦線の色 */
+}
+
+.news__time{
+  padding-left: 118px;
+  font-family: 'Neue Haas Grotesk Text Pro', Arial, sans-serif;
+  margin-right: 32px;
+  font-size: 16px;
+  padding-top: 30px;
+  color: #2D2D2D;
+}
+
+.news__txt{
+  margin-right: 300px;
+  font-size: 16px;
+  padding-top: 30px;
+  color: #2D2D2D;
+}
+
+/* コンセプトのスタイル */
+
+.main__container{
+  width: 1366px;
+  height: 1278px;
+  margin-top: 93px;
+}
+
+.main__concept{
+  width: 1138.8px;
+  height: 676px;
+  background-image: url(../img/CONCEPT.png);
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.concept__kv{
+  display: flex;
+}
+
+.concept__kv--img{
+  width: 475px;
+  height: 315px;
+  margin-top: 120px;
+  margin-left: 160px;
+}
+
+.concept__ttl{
+  width: 460px;
+  height: 120px;
+  margin-left: 15px;
+  margin-top: 203px;
+}
+
+.concept__ttl--txt{
+  display: flex;
+  width: 460px;
+  height: 54px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #192F60;
+  color: #FFFFFF;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 4px;
+}
+
+.concept__ttl--txt:nth-of-type(2){
+  margin-top: 12px;
+  width: 306px;
+  margin-left: auto;
+}
+
+.concept__ttl p{
+  width: 432px;
+  height: 80px;
+  margin-top: 32px;
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.concept__ttl span{
+  font-size: 60px;
+}
+
+.concept__txt{
+  width: 950px;
+  font-size: 14px;
+  margin-top: 40px;
+  margin-left: auto;
+  color: #333;
+  line-height: 32px;
+}
+
+.info__btn{
+  display: flex;
+  width: 245px;
+  height: 40px;
+  margin: 40px auto;
+  border: 1px solid #192F60 ;
+}
+
+.btn__txt{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 75px;
+}
+
+.info__btn--right{
+  width: 5px;
+  height: 10px;  
+  margin-left: 15px;
+  margin-right: 75px;
+  margin-top: 13px;
+}
+
+/* コンセプトテキスト */
+
+.concept__list{
+  margin-top: 80px;
+  background-image: url(../img/bg.png);
+  background-size: cover;
+  width: 100%;
+  height: 522px;
+  display: flex;
+
+}
+
+.concept__header--ttl{
+  width: 240px;
+  height: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 80px;
+  margin-left: 121px;
+}
+
+.concept__lsit--header{
+  display: flex;
+  width: 296px;
+  height: 54px;
+  background-color: #192F60;
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-left: 113px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  }
+
+.concept__list--txt{
+  font-size: 14px;
+  width: 372px;
+  height: 40px;
+  margin-top: 40px;
+  margin-left: 113px;
+}
+
+.concept__list--item{
+  width: 650px;
+  height: 126px;
+  display: flex;
+  margin-top: 40px;
+  margin-left: 187px;
+}
+
+.concept__flex .concept__list--item:nth-of-type(2) {
+  margin-left: 83px;   
+}
+
+.concept__flex .concept__list--item:nth-of-type(3) {
+  margin-left: 0; 
+}
+
+
+.concept__list--item span{
+  font-size: 100px;
+  font-weight: bold;
+  color: #EFF1F4;
+  opacity: 0.5;
+}
+
+.list__item--flex{
+  margin-left: 18px;
+}
+
+.list__item--ttl{
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 14px;
+}
+
+.list__item--txt{
+  font-size: 14px;
+  line-height: 28px;
+}
+
+/* サービス */
+.service{
+  width: 1140;
+  height: 703px;
+  background-image: url(../img/SERVICE.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-right: 113px;
+  margin-top: 80px;
+  margin-left: 113px;
+}
+
+.service__header{
+  margin-top: 80px;
+}
+
+.service__ttl{
+  width: 443px;
+  height: 54px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #192F60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 4px;
+}
+
+.service__txt{
+  font-size: 14px;
+  width: 950px;
+  height: 40px;
+  margin-top: 40px;
+  line-height: 30px;
+}
+
+.service__list{
+  margin-top: 40px;
+  width: 936px;
+  height: 449px;
+  display: flex;
+  margin-left: 95px;
+}
+
+.service__item{
+  background-image: url(../img/マスクグループ\ 1.png);
+  background-repeat: no-repeat;
+  background-size: 308px 205px;
+  width: 320px;
+}
+
+.service__list .service__item:nth-of-type(2) {
+  margin-left: 13px;
+  background-image: url(../img/マスクグループ\ -1.png);
+}
+
+.service__list .service__item:nth-of-type(3) {
+  margin-left: 13px;
+  background-image: url(../img/マスクグループ\ -2.png);
+}
+
+
+.service__item--ttl{
+  background-color: #FFFFFF;
+  width: 250px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 156px;
+  margin-left: 15px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.service__list .service__item:nth-of-type(2) .service__item--ttl {
+  width: 166px;
+}
+
+.service__list .service__item:nth-of-type(3) .service__item--ttl {
+  width: 171px;
+}
+
+
+.img__txt{
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.service__img--txt{
+  font-size: 14px;
+  width: 276px;
+  height: 92px;
+  margin-top: 25px;
+  line-height: 25px;
+}
+
+/* ワーク */
+.work{
+  width: 1366px;
+  margin-top: 80px;
+}
+
+.work__header{
+  width: 1140px;
+  height: 525px;
+  background-image: url(../img/WORKS.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  margin-left: 114px;
+}
+
+.work__ttl{
+  width: 443px;
+  height: 54px;
+  background-color: #192F60;
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 80px;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+}
+
+.work__header--txt{
+  width: 950px;
+  font-size: 14px;
+  margin-top: 40px;
+  margin-left: auto;
+}
+
+.work__slider{
+  margin-top: 80px;
+}
+
+.arrow__img{
+  width: 168px;
+  height: 64px;
+  margin-left: auto;
+}
+
+/* 正しいセレクタ: 非アクティブなスライドを小さく表示 */
+/* 非アクティブなスライドのスタイル */
+
+
+
+/* 矢印ナビゲーションのスタイル設定 */
+.slider__arrow img {
+  width: 64px; /* 画像の幅を指定 */
+  height: 64px; /* 高さは自動で調整してアスペクト比を保持 */
+  cursor: pointer; /* クリック可能なカーソルに変更 */
+}
+
+/* スライダー全体のスタイル設定 */
+.slider__container {
+  position: relative;
+  width: 1633px; 
+  max-width: 1133px; /* 最大幅を設定してください */
+  margin: auto; /* 中央寄せ */
+  overflow: visible; 
+}
+
+
+
+
+/* 個々のスライドのスタイル設定 */
+.slider {
+  display: flex; /* スライドを横並びにする */
+
+}
+
+.slide {
+  transform: scale(1);
+   transition: transform 0.5s ease;/* スムーズな変化を実現 */
+  /* 他のスタイル... */
+
+  width: 100%; 
+  transition: transform 0.5s ease; /* スムーズな移動のためのトランジション */
+}
+
+.slide.inactive {
+  transform: scale(0.8); /* 非アクティブなスライドを縮小表示 */
+  opacity: 0.5; /* 非アクティブなスライドを透明にする */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* トランジションをスムーズにする */
+}
+
+
+.slide img {
+  width: 100%; /* 画像をスライドの幅に合わせる */
+  display: block; /* ブロックレベル要素として表示 */
+}
+
+
+.work__info--ttl{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 365px;
+}
+
+.work__info--txt{
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 32px;
+  margin-left: 365px;
+}
+
+.info__btn--work{
+  display: flex;
+  font-size: 14px;
+  width: 245px;
+  height: 40px;
+  margin: 40px auto;
+  border: 1px solid #707070 ;
+  background-color: #AEB6C7;
+  color: #FFFFFF;
+
+}
+
+.btn__txt--work{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 182px;
+  margin: 0 auto;
+}
+
+.work__btn--right{
+  width: 5px;
+  height: 10px;  
+  margin-top: 11px;
+  margin-right: 19px;
+
+}
+
+/* ブログ */
+.blog{
+  background-image: url(../img/blog_bg.png);
+  width: 1366px;
+  height: 595px;
+  background-repeat: no-repeat;
+  /* background-position: none, right top; */
+
+}
+
+.blog__img{
+  background-image: url(../img/BLOG.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.blog__bg{
+  width: 950px;
+  height: 408px;
+  background-color: #FFFFFF;
+  margin-left: 204px;
+}
+
+.blog__info{
+  display: flex;
+}
+
+.blog__time{
+  font-size: 16px;
+  margin-left: 150px;
+  margin-top: 25px;
+}
+
+.blog__txt{
+  font-size: 16px;
+  margin-left: 32px;
+  text-decoration: underline;
+  margin-top: 25px;
+}
+
+.blog__bg .blog__info:nth-child(n+2) {
+  margin-top: 75px;
+}
