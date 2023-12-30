@@ -1009,12 +1009,14 @@ body{
 .header__nav {
     margin-left: 10px;
     width: 100px;
+    margin-top: 12px;
     
 }
 
 .nav__list {
     display: flex;
-    width: 240px;
+    width: 360px;
+    flex-wrap: wrap;
 }
 
 .nav__item {
