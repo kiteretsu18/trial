@@ -1014,7 +1014,7 @@ body{
 
 .nav__list {
     display: flex;
-    justify-content: flex-start;
+    width: 240px;
 }
 
 .nav__item {
