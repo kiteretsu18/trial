@@ -839,7 +839,7 @@ nav .inner ul li a:hover{
   width: 100%;
 }
 /* 中央以外のスライド */
-.slick-img img {
+.slick__img img {
   height: auto;
   opacity: .3;
   transform: scale(.8);
@@ -1047,6 +1047,18 @@ nav .inner ul li a:hover{
 @media (max-width: 1200px){
   .header__logo{
     display: block;
+  }
+
+  .service__img--txt{
+    margin-bottom: 100px;
+  }
+
+  .concept__ttl--txt.visible{
+    height: 80px;
+  }
+
+  .concept__lsit--header{
+    margin-top: 30px;
   }
 }
 
