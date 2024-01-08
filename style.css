@@ -8,10 +8,130 @@ body{
   color: #192F60;
 }
 
+/* ハンバーガーメニュー */
+.nav{
+  width: 260px;
+  display: block;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  transition: all 0.5s;
+  z-index: 3;
+  opacity: 0;
+}
+
+.open nav{
+  left: 0;
+  opacity: 1;
+}
+
+.inner{
+  padding: 25px;
+}
+
+nav .inner ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav .inner ul li {
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+nav .inner ul li a{
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 1rem;
+  transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover{
+  background-color: #2E4182;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.toggle__btn{
+  display: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.toggle__btn span{
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.5s ;
+  background-origin: 4px;
+}
+
+.open .toggle__btn span{
+  background-color: #fff;
+
+}
+
+.open .toggle__btn span:nth-child(1){
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle__btn span:nth-child(2){
+  opacity: 0;
+}
+
+.open .toggle__btn span:nth-child(3){
+  transform: translateY(-10px) rotate(315deg);
+}
+
+.toggle__btn span:nth-child(1){
+  top: 4px;
+}
+
+.toggle__btn span:nth-child(2){
+  top: 14px;
+}
+.toggle__btn span:nth-child(3){
+  bottom: 4px;
+}
+
+#mask{
+  display: none;
+  transition: all 0.5s;
+}
+
+.open #mask{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+
 /* ベースとなるスタイル */
 .header {
-  max-width: 100%;
+  max-width: 1200px;
   max-height: 100%;
+  width: 100vw;
   background-image: url(https://kiteretsu18.github.io/trial/fv-img01.png);
   background-size: 100% , auto;
   background-repeat: no-repeat;
@@ -42,7 +162,7 @@ body{
 
 /* ナビゲーションのスタイル */
 .header__nav {
-    margin-left: 229px;
+    margin-left: auto;
     
 }
 
@@ -278,40 +398,38 @@ body{
 }
 
 .news__header--ttl{
+  display: flex;
   font-size: 22px;
   font-weight: bold;
   padding-left: 40px;
-  padding-top: 26px;
-  position: relative; 
-  padding-right: 20px; 
+  align-items: center;
 
 }
 
 .news__header--ttl::after {
-  content: ''; /* 疑似要素の内容は空 */
-  display: block; /* 疑似要素をブロックレベル要素として表示 */
-  position: absolute; /* 親要素に対して絶対位置指定 */
-  right: 0; /* 要素の右端に配置 */
-  top: 70%; /* 上端から50%の位置に配置 */
-  transform: translateY(-50%); /* 縦線の高さの半分を上に移動して中央に配置 */
-  height: 1em; /* 縦線の高さをテキストのフォントサイズに合わせる */
-  width: 2px; /* 縦線の幅 */
-  background-color: #192F60; /* 縦線の色 */
+  content: ''; 
+  display: block;  
+  height: 1em; 
+  width: 2px; 
+  background-color: #192F60;
+  margin-left: 15px;
 }
 
 .news__time{
-  padding-left: 118px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
   font-family: 'Neue Haas Grotesk Text Pro', Arial, sans-serif;
   margin-right: 32px;
   font-size: 16px;
-  padding-top: 30px;
   color: #2D2D2D;
 }
 
 .news__txt{
-  margin-right: 300px;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
   font-size: 16px;
-  padding-top: 30px;
   color: #2D2D2D;
 }
 
@@ -684,15 +802,15 @@ body{
 }
 
 .work__header{
-  max-width: 1140px;
+  max-width: 1200px;
   background-image: url(https://kiteretsu18.github.io/trial/WORKS.png);
   background-repeat: no-repeat;
   background-position: left top;
-  margin-left: 114px;
+  margin-left: auto;
 }
 
 .work__ttl{
-  max-width: 443px;
+  max-width: max-content;
   max-height: 54px;
   background-color: #192F60;
   color: #FFFFFF;
@@ -714,69 +832,26 @@ body{
   margin-left: auto;
 }
 
-.work__slider{
-  margin-top: 80px;
-}
-
-.slider {
+/* スライダー */
+.container {
+  margin: 30px auto 0;
+  max-width: 500px;
   width: 100%;
-  overflow: visible;
-  position: relative;
-  margin: auto;
-  background-color: transparent; /* 背景を透明に設定 */
 }
-
-.slides {
-  margin-top: 40px;
-  display: flex;
-  transition: transform 0.5s ease;
-  will-change: transform;
-}
-
-.slide {
-  flex: 0 0 auto; 
-  width: 500px; 
-  height: 334px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  opacity: 0.5;
-  transform: scale(0.8); 
-  background-color: transparent; /* 背景を透明に設定 */
-}
-
-.slide.active {
-  opacity: 1;
-  transform: scale(1); 
-  width: 618px; 
-  height: 412px; 
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.arrows {
-  position: absolute;
-  right: 10px; /* 右上に配置 */
-  top: -20px; /* 右上に配置 */
-  z-index: 10;
-}
-
-.arrow {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.arrow img {
-  width: 50px;
+/* 中央以外のスライド */
+.slick-img img {
   height: auto;
+  opacity: .3;
+  transform: scale(.8);
+  transition: opacity .5s, transform .5s;
+  width: 100%;
 }
+/* 中央のスライド */
+.slider .slick-center img {
+  opacity: 1;
+  transform: scale(1);
+}
+
 
 .work__info--ttl{
   font-size: 20px;
@@ -969,13 +1044,20 @@ body{
 
 
 /* レスポンシブ */
+@media (max-width: 1200px){
+  .header__logo{
+    display: block;
+  }
+}
+
+
 @media (max-width: 760px) {
   /* ベースとなるスタイル */
 .header {
   margin: 0 16px;
   max-width: 375px;
   max-height: max-content;
-  background-image: url(../img/fv-img01.png);
+  background-image: url(https://kiteretsu18.github.io/trial/fv-img01.png);
   background-size: contain;
   background-repeat: no-repeat;
   color: #192F60;
@@ -1006,6 +1088,12 @@ body{
 
 
 /* ナビゲーションのスタイル */
+.toggle__btn{
+  display: block;
+
+}
+
+
 .header__nav {
     margin-left: 10px;
     width: 100px;
@@ -1272,7 +1360,7 @@ display: flex;
 .main__concept{
   max-width: 375px;
   max-height: max-content;
-  background-image: url(../img/CONCEPT.png);
+  background-image: url(https://kiteretsu18.github.io/trial/CONCEPT.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
@@ -1372,7 +1460,7 @@ display: flex;
 .concept__list{
   width: 375px;
   margin-top: 40px 16px;
-  background-image: url(../img/bg.png);
+  background-image: url(https://kiteretsu18.github.io/trial/bg.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -1461,7 +1549,7 @@ display: flex;
 .service{
   max-width: 375px;
   max-height: max-content;
-  background-image: url(../img/SERVICE.png);
+  background-image: url(https://kiteretsu18.github.io/trial/SERVICE.png);
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
@@ -1502,7 +1590,7 @@ display: flex;
 }
 
 .service__item{
-  background-image: url(../img/マスクグループ\ 1.png);
+  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ 1.png);
   background-repeat: no-repeat;
   background-size: 154px 102.5px;
   max-width: 160px;
@@ -1510,12 +1598,12 @@ display: flex;
 
 .service__list .service__item:nth-of-type(2) {
   margin-left: 6.5px;
-  background-image: url(../img/マスクグループ\ -1.png);
+  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -1.png);
 }
 
 .service__list .service__item:nth-of-type(3) {
   margin-left: 6.5px;
-  background-image: url(../img/マスクグループ\ -2.png);
+  background-image: url(https://kiteretsu18.github.io/trial/マスクグループ\ -2.png);
 }
 
 
@@ -1559,7 +1647,7 @@ display: flex;
 .work{
   max-width: 375px;
   margin: 40px 16px; 
-  background-image: url(../img/WORKS.png);
+  background-image: url(https://kiteretsu18.github.io/trial/WORKS.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -1590,56 +1678,6 @@ display: flex;
   font-size: 8px;
   margin-top: 20px;
   margin-left: auto;
-}
-
-/* 正しいセレクタ: 非アクティブなスライドを小さく表示 */
-/* 非アクティブなスライドのスタイル */
-
-
-
-/* 矢印ナビゲーションのスタイル設定 */
-.slider__arrow img {
-  width: 24px; /* 画像の幅を指定 */
-  height: 24px; /* 高さは自動で調整してアスペクト比を保持 */
-  cursor: pointer; /* クリック可能なカーソルに変更 */
-}
-
-/* スライダー全体のスタイル設定 */
-.slider__container {
-  position: relative;
-  max-width: 375px; 
-  margin: auto; /* 中央寄せ */
-  overflow: visible; 
-}
-
-
-
-
-/* 個々のスライドのスタイル設定 */
-.slider {
-  display: flex; /* スライドを横並びにする */
-
-}
-
-.slides{
-  width: 375px;
-}
-
-.slide {
-  /* ... 既存のスタイル ... */
-  transition: transform 0.5s ease; /* スムーズなトランジションを追加 */
-}
-
-.slide.inactive {
-  transform: scale(0.8); /* サイズを0.8に設定 */
-  opacity: 0.5; /* 透明度を下げる（オプショナル） */
-  transition: transform 0.5s ease, opacity 0.5s ease; /* スムーズなトランジション */
-}
-
-
-.slide img {
-  max-width: 50%; /* 画像をスライドの幅に合わせる */
-  display: block; /* ブロックレベル要素として表示 */
 }
 
 
@@ -1688,7 +1726,7 @@ display: flex;
 
 /* ブログ */
 .blog{
-  background-image: url(../img/blog_bg.png);
+  background-image: url(https://kiteretsu18.github.io/trial/blog_bg.png);
   max-width: 375px;
   max-height: max-content;
   background-repeat: no-repeat;
@@ -1699,7 +1737,7 @@ display: flex;
 }
 
 .blog__img{
-  background-image: url(../img/BLOG.png);
+  background-image: url(https://kiteretsu18.github.io/trial/BLOG.png);
   background-repeat: no-repeat;
   background-position: right top;
   background-size: contain;
@@ -1740,7 +1778,7 @@ display: flex;
   margin-top: 40px;
   max-width: 760px;
   max-height: 158px;
-  background-image: url(../img/contact01.png);
+  background-image: url(https://kiteretsu18.github.io/trial/contact01.png);
   padding-top: 40px;
   text-align: center;
 }
