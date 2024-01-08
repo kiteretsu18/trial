@@ -131,7 +131,8 @@ nav .inner ul li a:hover{
 .header {
   max-width: 1200px;
   max-height: 100%;
-  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
   background-image: url(https://kiteretsu18.github.io/trial/fv-img01.png);
   background-size: 100% , auto;
   background-repeat: no-repeat;
