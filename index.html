@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,16 +7,48 @@
     <meta name="format-detection" content="telephone=no" />
 
     <!-- css -->
+    <link rel="stylesheet" href="https://kiteretsu18.github.io/trial/css/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://kiteretsu18.github.io/trial/reset.css" />
-    <link rel="stylesheet" href="https://kiteretsu18.github.io/trial/style.css" />
+    <link rel="stylesheet" href="https://kiteretsu18.github.io/trial/css/style.css" />
+   
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   
 
 </head>
 <body>
     <!-- ヘッダー -->
     <header class="header">
+
+        <!-- ハンバーガーメニュー -->
+        <div id="navArea">
+            <nav class="nav">
+                <div class="inner">
+                    <ul>
+                        <li><a href="#">CONCEPT</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">WORKS</a></li>
+                        <li><a href="#">EX.DESIGN</a></li>
+                        <li><a href="#">BLOG</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="toggle__btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div id="mask"></div>
+        </div>
+
         <div class="header__top">
             <div class="header__logo">
                 <img src="https://kiteretsu18.github.io/trial/パス -1.png" alt="" class="header__logo--img">
@@ -66,7 +98,7 @@
         <section class="news__section">
             <div class="news__header">
                 <h2 class="news__header--ttl">NEWS</h2>
-                <time class="news__time" datetime="2020-00-00">2020年00月00日</time>
+                <time class="news__time" datetime="2020-00-00">2020年 <br> 0月00日</time>
                 <p class="news__txt">タイトルテキストリンクタイトルテキストリンクタイトルテキストリンク</p>
             </div>
         </section>
@@ -83,7 +115,7 @@
                     <div class="concept__ttl">
                         <h2 class="concept__ttl--txt">高クオリティのホームページを</h2>
                         <h2 class="concept__ttl--txt">お手頃価格でご提供</h2>
-                        <p>平均受注単価: <span>45～65</span>万円 </p>
+                        <p>平均受注単価: <span>45～65</span> 万円 </p>
                     </div>
                     
                 </div>
@@ -213,21 +245,33 @@
             <div class="work__header">
                 <h2 class="work__ttl">WEB集客をトータルサポート</h2>
                 <p class="work__header--txt">BtoBのコーポレートサイトを中心に様々なWEBサイトの制作実績がございます。集客に繋がるデザインで御社の売上UPに貢献する提案をします。</p>
+            </div>    
+                
+            <!-- スライダー -->
+
+            <div class="container">
+                <div class="slider">
+                  <div class="slick-img">
+                    <img
+                      src="https://kiteretsu18.github.io/trial/小左img.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slick-img">
+                    <img
+                      src="https://kiteretsu18.github.io/trial/大img.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slick-img">
+                    <img
+                      src="https://kiteretsu18.github.io/trial/小右img.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
             </div>
 
-                <div class="slider">
-                    <div class="slides">
-                        <!-- 画像をここに追加 -->
-                        <img src="https://kiteretsu18.github.io/trial/小左img.png" class="slide">
-                        <img src="https://kiteretsu18.github.io/trial/大img.png" class="slide">
-                        <img src="https://kiteretsu18.github.io/trial/小右img.png" class="slide">
-                        <!-- 他の画像も同様に追加 -->
-                    </div>
-                    <div class="arrows">
-                        <button class="arrow prev"><img src="https://kiteretsu18.github.io/trial/arrow1.png" alt="Previous"></button>
-                        <button class="arrow next"><img src="https://kiteretsu18.github.io/trial/arrow.png" alt="Next"></button>
-                    </div>
-                </div>
 
                 <div class="work__info">
                     <h2 class="work__info--ttl">下倉架空税理士事務所 様</h2>
@@ -314,128 +358,10 @@
                 </footer>
         
     </section>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="../src/script.js"></script>
     
-<!-- JavaScriptのスクリプトを追加 -->
-<script>
-  let currentIndex = 1; 
-  const slides = document.querySelector('.slides');
-  const slideArray = document.querySelectorAll('.slide');
-
-  function updateSlidePosition() {
-    const slideWidth = slideArray[currentIndex].clientWidth;
-    const offset = (slideWidth + 20) * currentIndex;
-    const centerOffset = -(offset - window.innerWidth / 2 + slideWidth / 2);
-
-    slides.style.transform = `translateX(${centerOffset}px)`;
-
-    slideArray.forEach((slide, index) => {
-      slide.classList.remove('active');
-      if (index === currentIndex) {
-        slide.classList.add('active');
-      }
-    });
-  }
-
-  document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slideArray.length - 1;
-    updateSlidePosition();
-  });
-
-  document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex < slideArray.length - 1) ? currentIndex + 1 : 0;
-    updateSlidePosition();
-  });
-
-  updateSlidePosition();
-  window.addEventListener('resize', updateSlidePosition);
-
-
-// コンセプトアニメーション
-
-window.addEventListener('scroll', () => {
-    const serviceItems = document.querySelectorAll('.concept__ttl--txt');
-    serviceItems.forEach(item => {
-        const itemPosition = item.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (itemPosition < windowHeight) {
-            item.classList.add('visible');
-        }
-    });
-});
-
-//コンセプト　アニメーション 
-window.addEventListener('scroll', () => {
-    const serviceItems = document.querySelectorAll('.concept__txt');
-    serviceItems.forEach(item => {
-        const itemPosition = item.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (itemPosition < windowHeight && itemPosition > 0) {
-            item.style.opacity = 1;
-            item.style.transform = 'translateY(0)';
-            item.style.transition = 'opacity 3s, transform 3s';
-        }
-    });
-});
-
-// ロゴアニメーション
-window.addEventListener('scroll', () => {
-    const serviceItems = document.querySelectorAll('.list__item--flex');
-    serviceItems.forEach(item => {
-        const itemPosition = item.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (itemPosition < windowHeight) {
-            item.classList.add('visible');
-        }
-    });
-});
-
-//ワーク　アニメーション 
-window.addEventListener('scroll', () => {
-    const serviceItems = document.querySelectorAll('.work__info--txt');
-    serviceItems.forEach(item => {
-        const itemPosition = item.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (itemPosition < windowHeight && itemPosition > 0) {
-            item.style.opacity = 1;
-            item.style.transform = 'translateY(0)';
-            item.style.transition = 'opacity 3s, transform 3s';
-        }
-    });
-});
-
-//ブログ　アニメーション 
-window.addEventListener('scroll', () => {
-    const serviceItems = document.querySelectorAll('.blog__info');
-    serviceItems.forEach(item => {
-        const itemPosition = item.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (itemPosition < windowHeight && itemPosition > 0) {
-            item.style.opacity = 1;
-            item.style.transform = 'translateY(0)';
-            item.style.transition = 'opacity 3s, transform 3s';
-        }
-    });
-});
-
-//サービス画像　アニメーション 
-window.addEventListener('scroll', () => {
-    const serviceItems = document.querySelectorAll('.service__list');
-    serviceItems.forEach(item => {
-        const itemPosition = item.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (itemPosition < windowHeight && itemPosition > 0) {
-            item.style.opacity = 1;
-            item.style.transform = 'translateY(0)';
-            item.style.transition = 'opacity 3s, transform 3s';
-        }
-    });
-});
-
-
-</script>
-</body>
-</html>
-
 
 </body>
+
 </html>
